@@ -139,7 +139,7 @@ def adjust_dropout(weights, prev_p, new_p):
 
 def get_data(path, target_size=(224,224)):
     batches = get_batches(path, shuffle=False, batch_size=1, class_mode=None, target_size=target_size)
-    return np.concatenate([batches.next() for i in range(batches.batch_size))])
+    return np.concatenate([batches.next()[0] for i in range(batches.batch_size)])
 
 
 def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
